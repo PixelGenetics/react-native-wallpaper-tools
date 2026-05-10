@@ -1,0 +1,8 @@
+import type { TurboModule } from 'react-native';
+import { TurboModuleRegistry } from 'react-native';
+
+export interface Spec extends TurboModule {
+  setWallpaper(uri: string, screen: string): Promise<boolean>;
+}
+
+export default TurboModuleRegistry.getEnforcing<Spec>('WallpaperTools');
